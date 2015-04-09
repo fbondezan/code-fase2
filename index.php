@@ -43,7 +43,7 @@ if(in_array($path, $paginas)){
 else
 {
 	$pag = "404.php"; 
-	header("HTTP/1.0 404 Not Found");
+	header('Página não encontrada', true, 404);
 	
 }
 
