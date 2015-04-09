@@ -188,7 +188,7 @@ if(!$_GET['form']!=enviar){
  
 <div class="form-group">
   <label for="comments">Mensagem</label>
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6" value="<?php if(isset($comments)){echo ($comments);} ?>"></textarea>
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6" value=""><?php if(isset($comments)){echo ($comments);} ?></textarea>
 </div>
 
 <button type="submit" class="btn btn-default">Enviar</button>
