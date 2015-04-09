@@ -48,8 +48,6 @@ if(isset($_POST['email'])) {
  
         !isset($_POST['email']) ||
  
-        !isset($_POST['telephone']) ||
- 
         !isset($_POST['comments'])) {
  
         //died();       
@@ -64,7 +62,6 @@ if(isset($_POST['email'])) {
  
     $email_from = $_POST['email']; // required
  
-   // $telephone = $_POST['telephone']; // not required
  
     $comments = $_POST['comments']; // required
  
@@ -126,9 +123,7 @@ if(isset($_POST['email'])) {
  
     $email_message .= "Email: ".clean_string($email_from)."\n";
  
-    $email_message .= "Telephone: ".clean_string($telephone)."\n";
- 
-    $email_message .= "Comments: ".clean_string($comments)."\n";
+    $email_message .= "Mensagem: ".clean_string($comments)."\n";
  
      
  
@@ -192,8 +187,8 @@ if(!$_GET['form']!=enviar){
 </div>
  
 <div class="form-group">
-  <label for="comments">Comments</label>
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6" value="<?php if(isset($_POST['comments'])){print_r ($_POST['comments']);} ?>"></textarea>
+  <label for="comments">Mensagem</label>
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6" value="<?php if(isset($comments)){echo ($comments);} ?>"></textarea>
 </div>
 
 <button type="submit" class="btn btn-default">Enviar</button>

@@ -39,12 +39,14 @@ $path = str_replace("/projetos/fase2/", "", $rota['path']);
 
 if(in_array($path, $paginas)){
 	$pag = $path . ".php"; 
+		if (!file_exists($pag)){
+			$pag = "404.php"; 
+		}
 }
 else
 {
 	$pag = "404.php"; 
 	header('Página não encontrada', true, 404);
-	
 }
 
 ?>
