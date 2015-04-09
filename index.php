@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> PHP - Fase 1</title>
+    <title> PHP - Fase 2</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,26 +20,33 @@
     
 
 <?php
+
+$absurl = $_SERVER['HTTP_HOST'];
+$comp = "/projetos/fase2/";
+$url = $absurl . $comp;
+
+$paginas = array("home", "empresa", "produtos", "servicos", "contato");
+
 $rota = parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
-$path = str_replace("/projetos/fase1/", "", $rota['path']); 
+$path = str_replace("/projetos/fase2/", "", $rota['path']); 
 
 //echo $_SERVER['HTTP_HOST'] . "<br/>"; 
 //echo $_SERVER['REQUEST_URI'] . "<br/>";
 //print_r($rota) . "<br/>";
 //echo $path . "<br/>";
+//echo $url . "<br/>";
 
-$pag = "home.php";
-
-if(isset($_GET['pag'])){
-
-	$arquivo = 	$_GET['pag'] . ".php"; 
-    	if(!file_exists($arquivo)){
-			$pag = "home.php";
-		} else {
-			$pag = $arquivo;
-		}
+if(in_array($path, $paginas)){
+	$pag = $path . ".php"; 
 }
+else
+{
+	$pag = "404.php"; 
+	header("HTTP/1.0 404 Not Found");
+	
+}
+
 ?>
 
 <div style="width: 960px; border:1px grey solid; margin:0 auto; ">

@@ -3,11 +3,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="?pag=home">HOME</a></li>
-        <li><a href="?pag=empresa">EMPRESA</a></li>
-        <li><a href="?pag=produtos">PRODUTOS</a></li>
-        <li><a href="?pag=servicos">SERVIÇOS</a></li>
-        <li><a href="?pag=contato">CONTATO</a></li>
+        <li><a href="<?php echo 'home'; ?>">HOME</a></li>
+        <li><a href="<?php echo 'empresa'; ?>">EMPRESA</a></li>
+        <li><a href="<?php echo 'produtos'; ?>">PRODUTOS</a></li>
+        <li><a href="<?php echo 'servicos'; ?>">SERVIÇOS</a></li>
+        <li><a href="<?php echo 'contato'; ?>">CONTATO</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
